@@ -13,7 +13,6 @@ import "../../styles/ThemeSelector/ThemeSelector.scss";
 const ThemeSelector = () => {
   const theme = useAppSelector((state) => state.theme.theme);
   const dispatch = useAppDispatch();
-  console.log(theme);
   const { t } = useTranslation();
 
   const toggleThemeHandler = useCallback(() => {
