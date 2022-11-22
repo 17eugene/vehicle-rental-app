@@ -1,0 +1,23 @@
+@import "../variables/variables.scss";
+
+.form__input {
+  width: 100%;
+  outline: none;
+  border: 2px solid #cdcccc;
+  padding: 6px 8px;
+  font-weight: 700;
+  border-radius: calc($br - 2px);
+  color: $font-color-secondary-light;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  transition: 0.15s linear;
+
+  &::placeholder {
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border: 2px solid #544bf78f;
+    box-shadow: none;
+  }
+}

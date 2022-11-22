@@ -1,0 +1,32 @@
+@import "../variables/variables.scss";
+
+.mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu {
+    padding: 20px 0;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: $bg-area-color-light;
+    box-shadow: 0 2px 5px $font-color-primary-light;
+    z-index: 600;
+    margin-top: 67px;
+    transform: translateX(-110%);
+    transition: 0.3s linear;
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    &.dark {
+      background-color: $bg-area-color-dark;
+      box-shadow: 0 2px 5px $font-color-primary-dark;
+    }
+  }
+}

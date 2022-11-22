@@ -1,0 +1,90 @@
+@import "../variables/variables.scss";
+
+.language-switcher {
+  font-size: calc($fontSize + 2px);
+  padding: 1.5rem 0.75rem;
+  position: relative;
+  display: inline-block;
+  flex: 0.25;
+
+  &__current-language {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  &::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    transform: translate(70%, 80%) rotate(45deg);
+    border-bottom: 2px solid $font-color-secondary-light;
+    border-right: 2px solid $font-color-secondary-light;
+  }
+
+  &.dark::after {
+    border-bottom: 2px solid $font-color-secondary-dark;
+    border-right: 2px solid $font-color-secondary-dark;
+  }
+}
+
+.tooltip {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 40px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  border-radius: $br;
+  position: absolute;
+  z-index: 1;
+  padding: 10px 10px;
+  background-color: $bg-color-light;
+  transition: 0.15s linear;
+
+  &.dark {
+    background-color: $bg-popup-color-dark;
+  }
+
+  & .lang {
+    cursor: pointer;
+    font-size: $fontSize;
+    padding: 3px 0;
+
+    &.dark:hover {
+      text-decoration: underline;
+      color: $font-color-secondary-dark;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: $font-color-secondary-light;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .language-switcher {
+    display: flex;
+    justify-content: center;
+
+    &::after {
+      transform: translate(300%, 80%) rotate(45deg);
+    }
+
+    &:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0px, 30px);
+    }
+  }
+}

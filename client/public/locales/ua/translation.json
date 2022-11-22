@@ -1,0 +1,123 @@
+{
+  "header": {
+    "navigation": {
+      "conditions": "умови",
+      "feedbacks": "відгуки",
+      "contacts": "контакти"
+    },
+    "login": "Вхід"
+  },
+
+  "contactsTextPrimary": "зробіть замовлення",
+  "contactsTextSecondary": "або",
+
+  "filterTitleClass": "Клас авто",
+  "filterTitleBody": "Тип кузова",
+  "filterTitleTransmission": "Тип трансмісії",
+
+  "economy": "економ",
+  "mid-range": "середній",
+  "business": "бізнес",
+  "premium": "преміум",
+
+  "gasoline": "бензин",
+  "diesel": "дизель",
+
+  "manual": "механіка",
+  "automatic": "автомат",
+
+  "sedan": "седан",
+  "hatchback": "хетчбек",
+  "suv": "позашляховик",
+
+  "days": "днів",
+  "day": "дні",
+  "per day": "за добу",
+
+  "book": "Забронювати авто",
+  "add": "Додати нове авто",
+  "addConfirm": "Додати",
+  "submit": "Підтвердити оновлення",
+
+  "deleteCar": "Видалити авто",
+  "updateCar": "Оновити дані про авто",
+
+  "orderDetails": "Переглянути замовлення",
+  "updateProfile": "Налаштування профіля",
+  "signOut": "Вийти",
+
+  "addTitle": "Додати авто",
+
+  "carForm": {
+    "brand": "Назва бренду",
+    "model": "Назва моделі",
+    "year": "Рік виробництва",
+    "engine": "Об'єм двигуна",
+    "transmission": "Тип трансмісії",
+    "fuel": "Тип палива",
+    "class": "Клас авто",
+    "body": "Тип кузова",
+    "price": "Ціна за добу",
+    "image": "Зображення (URL)"
+  },
+
+  "authForm": {
+    "registrationTitle": "Реєстрація",
+    "loginTitle": "Вхід",
+    "name": "Ім'я",
+    "password": "Пароль",
+    "passwordConfirm": "Підтвердіть пароль",
+    "btnReg": "Створити аккаунт",
+    "btnLog": "Увійти до профіля",
+    "haveAccount": "Вже зареєстровані?",
+    "needAccount": "Потрібен аккаунт?",
+    "registerLink": "Реєстрація"
+  },
+
+  "themeLight": "Світла тема",
+  "themeDark": "Темна тема",
+
+  "notFound": "Сторінку не знайдено",
+  "notFoundCar": "Відповідний автомобіль не знайдено",
+
+  "footer": {
+    "address": {
+      "city": "Одеса",
+      "street": "Олександрівський проспект, 4"
+    },
+    "joinUs": "Приєднуйся",
+    "additional": {
+      "title": "Додаткові сервіси",
+      "wedding": "Авто на весілля",
+      "abroad": "Оренда за кордоном",
+      "withDriver": "Авто з водієм",
+      "leasing": "Авто в лізинг",
+      "hourly": "Почасова оренда"
+    }
+  },
+
+  "booking": {
+    "title": "Розмістіть замовлення",
+    "emailPlaceholder": "Введіть адресу єл.пошти",
+    "phonePlaceholder": "Введіть ваш номер телефона",
+    "from": "Початкова дата",
+    "to": "Кінцева дата",
+    "totalDays": "Кількість днів",
+    "totalPrice": "Загальна ціна",
+    "commentTitle": "Додайте коментар до замовлення (опціонально)",
+    "commentPlaceholder": "Введіть ваш коментар",
+    "btnSubmit": "Підтвердити замовлення",
+    "btnCancel": "Відмінити",
+
+    "needTo": "Необхідно здійснити",
+    "toBookCar": "щоб забронювати авто",
+    "btnClose": "Закрити"
+  },
+
+  "order": {
+    "empty": "Замовлення відсутні"
+  },
+
+  "btnDelete": "Видалити",
+  "deleteConfirmation": "Впевнені, що хочете видалити обране авто"
+}

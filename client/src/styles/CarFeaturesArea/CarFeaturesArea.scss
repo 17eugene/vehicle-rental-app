@@ -1,0 +1,160 @@
+@import "../variables/variables.scss";
+
+.car-features {
+  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.7);
+  border-radius: $br;
+  width: 100%;
+  min-width: 230px;
+  padding: 20px 15px;
+  height: 360px;
+  background-color: rgba(206, 228, 249, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &.dark {
+    background-color: $bg-area-color-dark;
+    color: $font-color-primary-light;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    font-size: 18px;
+
+    &.dark {
+      color: $font-color-primary-dark;
+    }
+  }
+
+  &__specifications {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: $fontSize;
+    margin-bottom: 15px;
+
+    &.dark {
+      color: $font-color-primary-dark;
+    }
+  }
+
+  &__class {
+    font-size: $fontSize;
+    text-transform: lowercase;
+    text-align: center;
+    margin: 0 auto;
+    padding: 4px 8px;
+    width: fit-content;
+    background-color: $btn-color-primary;
+    border-radius: calc($br + 4px);
+    font-weight: 700;
+    margin-bottom: 40px;
+
+    &.dark {
+      background-color: $btn-color-secondary;
+    }
+  }
+}
+
+.price__list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+
+  &.dark .price__item,
+  &.dark .price__price {
+    color: $font-color-primary-dark;
+  }
+}
+
+.price__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  color: $font-color-secondary-light;
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: $font-color-secondary-dark;
+      position: absolute;
+      bottom: -10px;
+      left: 0px;
+      right: 0;
+    }
+  }
+}
+
+.price__days {
+  font-size: $fontSize;
+}
+
+.price__price {
+  color: $font-color-primary-light;
+  font-weight: 700;
+
+  & span {
+    font-size: $fontSize;
+    font-weight: 400;
+  }
+}
+
+.settings-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  transition: 0.15s linear;
+
+  &.dark {
+    fill: $font-color-primary-dark;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.disabled-settings {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  .car-features {
+    flex: 0.3;
+
+    &__specifications {
+      font-size: 12px;
+    }
+
+    &__class {
+      font-size: calc($fontSize - 2px);
+      width: 40%;
+    }
+  }
+
+  .price__days {
+    font-size: calc($fontSize - 2px);
+  }
+
+  .price__price {
+    font-size: calc($fontSize + 2px);
+  }
+
+  .price__price span {
+    font-size: calc($fontSize - 2px);
+  }
+}

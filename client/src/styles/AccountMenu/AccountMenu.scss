@@ -1,0 +1,72 @@
+@import "../variables/variables.scss";
+
+.account-menu-wrapper {
+  transition: 0.15s linear;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+}
+
+.account-menu__list {
+  width: 220px;
+  min-height: 150px;
+  padding: 15px 0px 5px 0px;
+  background-color: $bg-color-light;
+  border-radius: $br;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.5);
+
+  &.dark {
+    background-color: $bg-popup-color-dark;
+    color: $font-color-primary-dark;
+  }
+}
+
+.account-menu__email {
+  font-size: 12px;
+  color: $font-color-secondary-light;
+  padding-left: 5px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+
+  &.dark {
+    color: $font-color-secondary-dark
+  }
+}
+
+.account-menu__item {
+  padding: 10px 0px 10px 15px;
+  transition: 0.15s linear;
+  cursor: pointer;
+  position: relative;
+  font-size: $fontSize;
+
+  &:hover:not(:nth-child(1)) {
+    text-decoration: underline;
+  }
+}
+
+.sign-out {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  transition: 0.15s linear;
+  cursor: pointer;
+  gap: 10px;
+  margin-top: 8px;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 90%;
+    background-color: $font-color-primary-light;
+    position: absolute;
+    top: -4px;
+    right: 5%;
+  }
+
+  &:hover {
+    background-color: rgba(195, 194, 192, 0.2);
+  }
+}

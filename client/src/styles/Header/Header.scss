@@ -1,0 +1,41 @@
+@import "../variables/variables.scss";
+
+.header {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: $bg-color-light;
+  z-index: 601;
+
+  & .button__switch:hover {
+    color: $font-color-primary-light
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &.dark .button__switch {
+    color: $font-color-primary-dark;
+
+    &:hover {
+      color: $font-color-primary-dark;
+    }
+  }
+
+  &.dark {
+    box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.5);
+    background-color: $bg-color-dark;
+    color: $font-color-primary-dark;
+  }
+
+}
+
+.switch-block {
+  display: flex;
+  align-items: center;
+}

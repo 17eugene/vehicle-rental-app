@@ -1,0 +1,73 @@
+@import "../variables/variables.scss";
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  height: 105px;
+
+  &__bar {
+    padding: 10px 10px;
+    width: 370px;
+    min-width: 370px;
+    min-height: 105px;
+    overflow: hidden;
+    outline: 2px solid #0e0e1113;
+    border-radius: $br;
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.7);
+    background-color: rgba(206, 228, 249, 1);
+    scroll-behavior: smooth;
+    transition: all 0.15s linear;
+
+    &.dark {
+      background-color: $bg-area-color-dark;
+      box-shadow: 0px 0px 7px rgba(234, 236, 233, 0.5),
+        0px 0px 12px rgba(98, 194, 46, 0.7);
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    height: 35px;
+    width: 25px;
+    transition: 0.15s linear;
+    cursor: pointer;
+
+    &.dark:hover {
+      background-color: #b6b5b2;
+    }
+
+    &.dark .slider__icon {
+      fill: $font-color-primary-dark;
+    }
+
+    &:hover {
+      background-color: #bfbbbb75;
+
+      & .slider__icon {
+        fill: $font-color-primary-light;
+      }
+    }
+  }
+}
+
+.slider__icon {
+  fill: $font-color-primary-light;
+  transition: 0.15s linear;
+}
+
+@media screen and (min-width: 769px) {
+  .slider {
+    gap: 40px;
+
+    &__bar {
+      width: 610px;
+    }
+  }
+}

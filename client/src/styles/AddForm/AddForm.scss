@@ -1,0 +1,49 @@
+@import "../variables/variables.scss";
+
+.add-form-wrapper {
+  padding: 15px;
+  background-color: $bg-color-light;
+
+  &.dark {
+    background-color: $bg-area-color-dark;
+
+    & .add-form__title {
+      color: $font-color-primary-dark;
+    }
+
+    & .form__input,
+    & .form__select {
+      background-color: $font-color-secondary-light;
+      border: 2px solid rgb(103, 102, 102);
+      color: $font-color-primary-dark;
+    }
+
+    & .form__input::placeholder,
+    & .form__select::placeholder {
+      color: $font-color-secondary-dark;
+    }
+  }
+}
+
+.add-form__title {
+  font-weight: 700;
+  font-size: calc($fontSize + 8px);
+  text-align: center;
+  color: $font-color-primary-light;
+  margin-bottom: 20px;
+}
+
+.form__label {
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.add-error {
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(252, 103, 103, 0.546);
+  border-radius: $br;
+  text-transform: uppercase;
+}

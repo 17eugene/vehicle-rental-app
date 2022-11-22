@@ -1,0 +1,16 @@
+@import "../../styles/variables/variables.scss";
+
+.logo-wrapper {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Hertz_Car_Rental_logo.svg/800px-Hertz_Car_Rental_logo.svg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-wrapper {
+    margin-right: 15px;
+  }
+}

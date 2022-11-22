@@ -1,0 +1,13 @@
+.form {
+  position: relative;
+
+  &__add {
+    width: 320px;
+  }
+
+  &__update {
+    width: 240px;
+    height: fit-content;
+    margin-top: 10px;
+  }
+}

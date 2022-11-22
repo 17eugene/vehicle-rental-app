@@ -1,0 +1,74 @@
+@import "../variables/variables.scss";
+
+.order-details {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $bg-color-light;
+  min-width: 310px;
+  min-height: 70px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: $br;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.5);
+
+  &.dark {
+    background-color: $bg-popup-color-dark;
+
+    & .cars-list__order-info {
+      color: $font-color-primary-dark;
+    }
+
+    & .order-details__empty {
+      color: $font-color-primary-dark;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item:not(:last-of-type):after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: $font-color-primary-light;
+    position: absolute;
+    bottom: 0;
+  }
+
+  & .cars-list__element {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  & .cars-list__image-wrapper {
+    width: 120px;
+  }
+
+  & .cars-list__order-info {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    text-transform: uppercase;
+    flex: 1;
+    color: $font-color-secondary-light;
+  }
+
+  & .cars-list__dates {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__empty {
+    text-align: center;
+    color: $font-color-primary-light;
+    font-weight: 700;
+    font-size: calc($fontSize + 2px);
+  }
+}

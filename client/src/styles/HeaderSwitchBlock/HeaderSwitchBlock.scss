@@ -1,0 +1,13 @@
+.switch-block {
+    flex: 0.5;
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .switch-block {
+        flex: 1;
+        justify-content: flex-end;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+}

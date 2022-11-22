@@ -1,0 +1,24 @@
+@import "../variables/variables.scss";
+
+.filter-block__header {
+  padding: 15px 10px;
+  background-color: $btn-color-primary;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+
+  &.dark {
+    background-color: $btn-color-secondary;
+  }
+}
+
+.toggle-icon-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.filter-block__arrow-icon {
+    cursor: pointer;
+}
+

@@ -1,0 +1,19 @@
+.navigation__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 0;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__list {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 0;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+}

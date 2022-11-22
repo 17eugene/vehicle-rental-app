@@ -1,0 +1,12 @@
+.auth-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgb(139, 208, 252), rgb(204, 202, 204));
+
+  &.login {
+    background: linear-gradient(to right, rgb(242, 251, 178), rgb(255, 157, 115));
+  }
+  
+}

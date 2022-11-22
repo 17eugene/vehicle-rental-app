@@ -1,0 +1,57 @@
+@import "../../styles/variables/variables.scss";
+
+.button {
+  background-color: $btn-color-primary;
+  padding: 5px 10px;
+  min-width: 6rem;
+  outline: none;
+  border: none;
+  border-radius: calc($br - 2px);
+  color: $font-color-primary-light;
+  font-size: $fontSize;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: 0.15s linear;
+  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+
+  &:hover {
+    background-color: $btn-color-secondary;
+    color: $font-color-primary-dark;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &__fullWidth {
+    width: 100%;
+    margin-top: 10px;
+  }
+  &__add {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 25px;
+    margin-left: auto;
+  }
+
+  &__login {
+    margin-left: auto;
+  }
+
+  &__book {
+    width: 100%;
+    height: 35px;
+  }
+
+  &__switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3px;
+    padding: 0 10px;
+    height: 30px;
+    box-shadow: none;
+    font-size: $fontSize;
+  }
+}

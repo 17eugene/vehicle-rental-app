@@ -1,0 +1,64 @@
+@import "../variables/variables.scss";
+
+.delete-confirmation {
+  padding: 15px 10px 10px 10px;
+  background-color: $bg-color-light;
+  max-width: 380px;
+
+  & .delete-error {
+    padding: 10px;
+    text-align: center;
+    font-size: calc($fontSize + 2px);
+    color: $font-color-primary-light;
+    background-color: rgba(252, 103, 103, 0.546);
+    border-radius: $br;
+    margin-bottom: 20px;
+  }
+
+  &.dark {
+    background-color: $bg-popup-color-dark;
+
+    & .delete-error {
+      color: $font-color-primary-dark;
+      background-color: rgba(249, 7, 7, 0.65);
+    }
+
+    & .delete-confirmation__title {
+      color: $font-color-primary-dark;
+    }
+  }
+
+  &__title {
+    color: $font-color-primary-light;
+    font-size: calc($fontSize + 2px);
+    margin-bottom: 20px;
+  }
+
+  & .button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .delete-confirmation {
+    padding: 30px 15px 15px 15px;
+    max-width: max-content;
+
+    & .delete-error {
+      margin-bottom: 30px;
+      font-size: calc($fontSize + 4px);
+    }
+
+    &__title {
+      font-size: calc($fontSize + 6px);
+      margin-bottom: 35px;
+    }
+
+    & .button-group {
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.need-auth-wrapper {
+    padding: 15px;
+}
+
+.need-auth {
+    width: 300px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+@import "../variables/variables.scss";
+
+.form__select {
+  width: 100%;
+  outline: none;
+  border: 2px solid #cdcccc;
+  padding: 6px 8px;
+  font-weight: 700;
+  border-radius: calc($br - 2px);
+  color: $font-color-secondary-light;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  transition: 0.15s linear;
+
+  &:focus {
+    border: 2px solid #544bf78f;
+    box-shadow: none;
+  }
+}
+
+.form__option {
+  font-weight: 700;
+  font-size: $fontSize;
+
+  &--default {
+    color: rgb(160, 160, 160);
+  }
+}

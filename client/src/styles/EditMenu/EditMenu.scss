@@ -1,0 +1,57 @@
+@import "../variables/variables.scss";
+
+.edit-menu {
+  width: 240px;
+  max-height: 110px;
+  border-radius: $br;
+  background-color: $bg-color-light;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 40px;
+  right: 25px;
+  padding: 25px 15px 15px 15px;
+  z-index: 5;
+  opacity: 0.95;
+
+  &.dark {
+    background-color: $bg-area-color-dark;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 1);
+
+    & .edit-menu__text {
+      color: $font-color-primary-dark;
+
+      &:first-of-type::after {
+        display: block;
+        content: "";
+        height: 1px;
+        width: 100%;
+        background: $font-color-secondary-dark;
+        position: absolute;
+        bottom: 0px;
+      }
+    }
+  }
+
+  &__text {
+    transition: 0.15s linear;
+    position: relative;
+    padding: 7px 5px;
+    color: $font-color-primary-light;
+
+    &:hover {
+      cursor: pointer;
+      color: $font-color-secondary-light;
+      text-decoration: underline;
+    }
+
+    &:first-of-type::after {
+      display: block;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background: $font-color-secondary-light;
+      position: absolute;
+      bottom: 0px;
+    }
+  }
+}

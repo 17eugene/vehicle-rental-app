@@ -1,0 +1,65 @@
+@import "../variables/variables.scss";
+
+.update-form-wrapper {
+  padding: 5px 20px 20px 20px;
+
+  .car-form-error {
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: calc($fontSize + 6px);
+    color: $font-color-primary-light;
+    background-color: rgba(252, 103, 103, 0.546);
+    border-radius: $br;
+  }
+
+  &.dark {
+    background-color: $bg-area-color-dark;
+
+    & .car-form-error {
+      color: $font-color-primary-dark;
+      background-color: rgba(249, 7, 7, 0.65);
+    }
+
+    & .form__label-sign {
+      color: $font-color-primary-dark;
+    }
+
+    & .form__input,
+    & .form__select {
+      background-color: $font-color-secondary-light;
+      border: 2px solid rgb(103, 102, 102);
+      color: $font-color-secondary-dark;
+    }
+  }
+
+  & .form__update {
+    width: fit-content;
+  }
+
+  & .form__label {
+    margin-bottom: 0;
+  }
+
+  & .form__label-sign {
+    font-size: 10px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    color: $font-color-secondary-light;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .update-form-wrapper {
+    padding: 5px 10px 10px 10px;
+
+    & .form__update {
+      max-width: 250px;
+      min-width: 190px;
+    }
+  }
+
+  .car-form-error {
+    font-size: calc($fontSize + 2px);
+  }
+}

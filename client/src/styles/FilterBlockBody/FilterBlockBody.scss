@@ -1,0 +1,14 @@
+@import "../variables/variables.scss";
+
+.filter-block__body {
+    padding: 10px 0;
+    background-color: rgba(206, 228, 249, 1);
+
+    &.dark {
+        background-color: $bg-area-color-dark;
+
+        & .filter-block__value {
+            color: $font-color-secondary-dark;
+        }
+    }
+}
