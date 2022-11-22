@@ -31,7 +31,7 @@ const userSignUp = async (req, res, next) => {
       role: newUser.role,
     };
 
-    const token = jwt.sign(payload, process.env.TOKEN_KEY);
+    const token = jwt.sign(payload, process.env.TOKEN_KEY, {expiresIn: 300});
 
     await User.findByIdAndUpdate(newUser._id, { token });
 

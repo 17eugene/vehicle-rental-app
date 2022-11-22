@@ -17,7 +17,7 @@ const userSignIn = async (req, res, next) => {
       role: user.role,
     };
 
-    const token = jwt.sign(payload, process.env.TOKEN_KEY);
+    const token = jwt.sign(payload, process.env.TOKEN_KEY, {expiresIn: 300});
 
     await User.findByIdAndUpdate(user._id, { token });
 
