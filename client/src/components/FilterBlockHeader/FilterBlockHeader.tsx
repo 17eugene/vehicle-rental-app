@@ -1,6 +1,6 @@
-import { MouseEvent, useContext } from "react";
+import { MouseEvent } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import ThemeContext from "../../context/context";
 
 import "../../styles/FilterBlockHeader/FilterBlockHeader.scss";
 
@@ -17,7 +17,7 @@ const FilterBlockHeader = ({
   onClick,
   variant,
 }: IFilterBlockHeaderProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div
       className={

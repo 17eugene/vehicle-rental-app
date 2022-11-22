@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import ThemeContext from "../../context/context";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import { GrFormClose } from "react-icons/gr";
 
 import "../../styles/CloseIcon/CloseIcon.scss";
@@ -9,7 +8,7 @@ interface ICloseIconProps {
 }
 
 const CloseIcon = ({ onClick }: ICloseIconProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div
       className={theme === "light" ? "close-icon" : "close-icon dark"}

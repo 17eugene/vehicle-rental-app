@@ -1,5 +1,5 @@
-import { useContext, ReactNode } from "react";
-import ThemeContext from "../../context/context";
+import { ReactNode } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import "../../styles/FilterBlockBody/FilterBlockBody.scss";
 
 interface IFilterBlockBodyProps {
@@ -7,7 +7,7 @@ interface IFilterBlockBodyProps {
 }
 
 const FilterBlockBody = ({ children }: IFilterBlockBodyProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
 
   return (
     <div

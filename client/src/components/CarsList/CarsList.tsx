@@ -1,11 +1,9 @@
-import { useContext } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import { useTranslation } from "react-i18next";
 import CarsElement from "../CarsElement/CarsElement";
 import CarsSlider from "../CarsSlidel/CarsSlider";
 
 import { ICarResponse } from "../../model/car/car";
-
-import ThemeContext from "../../context/context";
 
 import "../../styles/CarsList/CarsList.scss";
 
@@ -15,7 +13,7 @@ interface ICarsListProps {
 }
 
 const CarsList = ({ cars, onClick }: ICarsListProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const { t } = useTranslation();
   return (
     <CarsSlider>

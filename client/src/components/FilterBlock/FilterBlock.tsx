@@ -1,5 +1,5 @@
-import { ReactNode, MouseEvent, useContext } from "react";
-import ThemeContext from "../../context/context";
+import { ReactNode, MouseEvent } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 
 import "../../styles/FilterBlock/FilterBlock.scss";
 
@@ -9,7 +9,7 @@ interface IFilterBlockProps {
 }
 
 const FilterBlock = ({ children, onClick }: IFilterBlockProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div
       className={theme === "light" ? "filter-block" : "filter-block dark"}

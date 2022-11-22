@@ -1,24 +1,20 @@
-import { useContext, Dispatch, SetStateAction } from "react";
-import ThemeContext from "../../context/context";
-
+import { useAppSelector } from "../../redux/hooks/hooks";
+import ThemeSelector from "../ThemeSelector/ThemeSelector";
 import NavbarList from "../NavbarList/NavbarList";
 import "../../styles/MobileMenu/MobileMenu.scss";
-import ThemeSelector from "../ThemeSelector/ThemeSelector";
 
 interface IMobileMenuProps {
-  setTheme: Dispatch<SetStateAction<string | null>>;
   activeSandwich: boolean;
   toggleContactsSection: () => void;
   contactsIsOpened: boolean;
 }
 
 const MobileMenu = ({
-  setTheme,
   activeSandwich,
   toggleContactsSection,
   contactsIsOpened,
 }: IMobileMenuProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div
       className={
@@ -31,7 +27,7 @@ const MobileMenu = ({
           : "mobile-menu dark"
       }
     >
-      <ThemeSelector setTheme={setTheme} />
+      <ThemeSelector />
       <NavbarList
         variant="mobile"
         toggleContactsSection={toggleContactsSection}

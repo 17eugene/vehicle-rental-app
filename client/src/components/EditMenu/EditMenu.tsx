@@ -1,7 +1,6 @@
-import { useContext } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import { useTranslation } from "react-i18next";
 import CloseIcon from "../CloseIcon/CloseIcon";
-import ThemeContext from "../../context/context";
 
 import "../../styles/EditMenu/EditMenu.scss";
 
@@ -16,7 +15,7 @@ const EditMenu = ({
   toggleUpdateForm,
   toggleDeleteConfirmation,
 }: IEditMenuProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const { t } = useTranslation();
   return (
     <div className={theme === "light" ? "edit-menu" : "edit-menu dark"}>

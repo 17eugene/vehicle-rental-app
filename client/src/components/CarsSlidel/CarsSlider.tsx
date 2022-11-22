@@ -1,8 +1,7 @@
-import { ReactNode, useCallback, MouseEvent, useRef, useContext } from "react";
+import { ReactNode, useCallback, MouseEvent, useRef } from "react";
 import { useAppSelector } from "../../redux/hooks/hooks";
 import Loader from "../Loader/Loader";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
-import ThemeContext from "../../context/context";
 
 import "../../styles/CarsSlider/CarsSlider.scss";
 
@@ -11,7 +10,7 @@ interface ICarsSliderProps {
 }
 
 const CarsSlider = ({ children }: ICarsSliderProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const carouselRef = useRef<HTMLDivElement>(null);
   const isRefreshing = useAppSelector((state) => state.auth.refreshing);
 

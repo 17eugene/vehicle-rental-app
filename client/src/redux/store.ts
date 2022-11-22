@@ -2,9 +2,15 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
+import themeSlice from "./theme/theme-slice";
 import carsSlice from "./cars/cars-slice";
 import authSlice from "./users/users-slice";
 import ordersSlice from "./orders/orders-slice";
+
+const themePersistConfig = {
+  key: "theme",
+  storage,
+}
 
 const authPesistConfig = {
   key: "auth",
@@ -14,6 +20,7 @@ const authPesistConfig = {
 
 export const store = configureStore({
   reducer: {
+    theme: persistReducer(themePersistConfig, themeSlice),
     cars: carsSlice,
     auth: persistReducer(authPesistConfig, authSlice),
     orders: ordersSlice,

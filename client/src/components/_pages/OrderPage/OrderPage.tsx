@@ -1,11 +1,4 @@
-import {
-  useState,
-  useCallback,
-  ChangeEvent,
-  useMemo,
-  FormEvent,
-  useContext,
-} from "react";
+import { useState, useCallback, ChangeEvent, useMemo, FormEvent } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import { useAppSelector, useAppDispatch } from "../../../redux/hooks/hooks";
@@ -24,8 +17,6 @@ import Button from "../../Button/Button";
 import FormError from "../../FormError/FormError";
 import { IOrder } from "../../../model/order/order";
 
-import ThemeContext from "../../../context/context";
-
 import { formatCurrency } from "../../../utils/formatCurrency";
 
 import "../../../styles/OrderPage/OrderPage.scss";
@@ -33,7 +24,7 @@ import "../../../styles/OrderPage/OrderPage.scss";
 const phoneRE = /(?=.*\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$)/;
 
 const OrderPage = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const userEmail = useAppSelector((state) => state.auth.user.email);
   const selectedCar = useAppSelector((state) => state.cars.selectedCar);
   const pricePerDay = Number(

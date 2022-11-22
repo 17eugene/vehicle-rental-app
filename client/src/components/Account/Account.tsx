@@ -1,21 +1,16 @@
-import { useState, useCallback, useContext } from "react";
+import { useState, useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import authOperations from "../../redux/users/users-operations";
-
-import { ImUser } from "react-icons/im";
-
 import AccountMenu from "../AccountMenu/AccountMenu";
-
-import ThemeContext from "../../context/context";
+import { ImUser } from "react-icons/im";
 
 import "../../styles/Account/Account.scss";
 
-
-
 const Account = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const dispatch = useAppDispatch();
-  const [accountMenuIsOpened, setAccountMenuIsOpened] = useState<boolean>(false);
+  const [accountMenuIsOpened, setAccountMenuIsOpened] =
+    useState<boolean>(false);
 
   const openMenu = () => {
     setAccountMenuIsOpened(true);

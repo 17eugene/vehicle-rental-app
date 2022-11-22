@@ -1,16 +1,13 @@
-import { useContext } from "react";
 import { useAppSelector } from "../../redux/hooks/hooks";
 import { useTranslation } from "react-i18next";
 import CarsElement from "../CarsElement/CarsElement";
 import OrderDetailsItem from "../OrderDetailsItem/OrderDetailsItem";
 import Loader from "../Loader/Loader";
 
-import ThemeContext from "../../context/context";
-
 import "../../styles/OrderDetails/OrderDetails.scss";
 
 const OrderDetails = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector(state => state.theme.theme);
   const ordersCollection = useAppSelector(
     (state) => state.orders.ordersCollection
   );

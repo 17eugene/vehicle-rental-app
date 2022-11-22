@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks/hooks";
 
@@ -10,13 +9,11 @@ import HeaderSwitchBlock from "../HeaderSwitchBlock/HeaderSwitchBlock";
 import Account from "../Account/Account";
 
 import { useTranslation } from "react-i18next";
-import ThemeContext from "../../context/context";
 
 import "../../styles/Header/Header.scss";
 import Loader from "../Loader/Loader";
 
 interface IHeaderProps {
-  setTheme: Dispatch<SetStateAction<string | null>>;
   toggleMobileMenu: () => void;
   activeSandwich: boolean;
   toggleContactsSection: () => void;
@@ -24,13 +21,12 @@ interface IHeaderProps {
 }
 
 const Header = ({
-  setTheme,
   toggleMobileMenu,
   activeSandwich,
   toggleContactsSection,
   contactsIsOpened,
 }: IHeaderProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector(state => state.theme.theme);
   const isLoggenInStatus = useAppSelector((state) => state.auth.isLoggedIn);
   const isRefreshing = useAppSelector((state) => state.auth.refreshing);
   const navigate = useNavigate();
@@ -52,7 +48,7 @@ const Header = ({
             toggleContactsSection={toggleContactsSection}
             contactsIsOpened={contactsIsOpened}
           />
-          <HeaderSwitchBlock setTheme={setTheme} />
+          <HeaderSwitchBlock />
           {isRefreshing ? (
             <Loader />
           ) : (

@@ -1,4 +1,4 @@
-import { useContext, useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 
 import { useFormik } from "formik";
@@ -11,16 +11,15 @@ import FormSelect from "../FormSelect/FormSelect";
 import FormError from "../FormError/FormError";
 import Button from "../Button/Button";
 import CloseIcon from "../CloseIcon/CloseIcon";
+import Loader from "../Loader/Loader";
 
 import carsOperations from "../../redux/cars/cars-operations";
 
-import ThemeContext from "../../context/context";
 import { filterData } from "../../filterData";
 
 import { t } from "i18next";
 
 import "../../styles/UpdateForm/UpdateForm.scss";
-import Loader from "../Loader/Loader";
 
 interface IUpdateFormProps {
   toggleUpdateForm: () => void;
@@ -28,7 +27,7 @@ interface IUpdateFormProps {
 
 const UpdateForm = ({ toggleUpdateForm }: IUpdateFormProps) => {
   const [updError, setUpdError] = useState<string>("");
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector(state=> state.theme.theme);
   const dispatch = useAppDispatch();
   const selectedCar = useAppSelector((state) => state.cars.selectedCar);
   const isLoading = useAppSelector((state) => state.cars.loading);

@@ -1,48 +1,28 @@
-import {
-  useEffect,
-  useCallback,
-  Dispatch,
-  SetStateAction,
-  useContext,
-} from "react";
+import { useCallback } from "react";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks/hooks";
+import { selectTheme } from "../../redux/theme/theme-slice";
 import { useTranslation } from "react-i18next";
 
 import Button from "../Button/Button";
-
-import ThemeContext from "../../context/context";
 
 import { BsFillMoonFill, BsSun } from "react-icons/bs";
 
 import "../../styles/ThemeSelector/ThemeSelector.scss";
 
-interface IThemeSelectorProps {
-  setTheme: Dispatch<SetStateAction<string | null>>;
-}
 
-const ThemeSelector = ({ setTheme }: IThemeSelectorProps) => {
-  const theme = useContext(ThemeContext);
+const ThemeSelector = () => {
+  const theme = useAppSelector((state) => state.theme.theme);
+  const dispatch = useAppDispatch();
+  console.log(theme);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const currTheme: string | null = window.localStorage.getItem("theme");
-
-    if (!currTheme) {
-      window.localStorage.setItem("theme", "light");
-    } else {
-      const parsedThemeValue = JSON.parse(currTheme);
-      setTheme(parsedThemeValue);
-    }
-  }, [setTheme]);
-
-  useEffect(() => {
-    if (theme) {
-      window.localStorage.setItem("theme", JSON.stringify(theme));
-    }
-  }, [theme]);
-
   const toggleThemeHandler = useCallback(() => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  }, [setTheme]);
+    if (theme === "light") {
+      dispatch(selectTheme({ theme: "dark" }));
+    } else {
+      dispatch(selectTheme({ theme: "light" }));
+    }
+  }, [dispatch, theme]);
 
   return (
     <div className="theme-selector">

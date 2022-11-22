@@ -1,11 +1,10 @@
-import { useContext } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import { MdLocalPhone } from "react-icons/md";
 import { useTranslation } from "react-i18next";
-import ThemeContext from "../../context/context";
 import "../../styles/PhoneNumber/PhoneNumber.scss";
 
 const PhoneNumber = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector(state => state.theme.theme);
   const { t } = useTranslation();
   return (
     <div className="phone-wrapper">

@@ -1,10 +1,8 @@
-import { useContext } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import { useTranslation } from "react-i18next";
 
 import NavbarItem from "../NavbarItem/NavbarItem";
 import Contacts from "../Contacts/Contacts";
-
-import ThemeContext from "../../context/context";
 
 import "../../styles/NavbarList/NavbarList.scss";
 import "../../styles/NavbarItem/NavbarItem.scss";
@@ -18,9 +16,8 @@ interface INavbarList {
 const NavbarList = ({
   toggleContactsSection,
   contactsIsOpened,
-  variant
 }: INavbarList) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector(state => state.theme.theme);
   const { t } = useTranslation();
   return (
     <>

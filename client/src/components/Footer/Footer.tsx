@@ -1,15 +1,13 @@
-import { useContext } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import { useTranslation } from "react-i18next";
+import Container from "../Container/Container";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import Logo from "../Logo/Logo";
 
-import ThemeContext from "../../context/context";
-
 import "../../styles/Footer/Footer.scss";
-import Container from "../Container/Container";
 
 const Footer = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const { t } = useTranslation();
   return (
     <div className={theme === "light" ? "footer" : "footer dark"}>

@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { useAppSelector } from "../../redux/hooks/hooks";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
@@ -8,8 +7,6 @@ import { ICarResponse } from "../../model/car/car";
 
 import { formatCurrency } from "../../utils/formatCurrency";
 import { BsThreeDots } from "react-icons/bs";
-
-import ThemeContext from "../../context/context";
 
 import { useTranslation } from "react-i18next";
 import "../../styles/CarFeaturesArea/CarFeaturesArea.scss";
@@ -29,7 +26,7 @@ const CarFeaturesArea = ({
   toggleUpdateForm,
   toggleDeleteConfirmation,
 }: ICarFeaturesArea) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const userRole = useAppSelector((state) => state.auth.user.role);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
   const { t } = useTranslation();

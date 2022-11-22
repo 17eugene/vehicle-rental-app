@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import ThemeContext from "../../context/context";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import "../../styles/Navbar/Navbar.scss";
 
 interface IMobileMenuProps {
@@ -8,7 +7,7 @@ interface IMobileMenuProps {
 }
 
 const MobileMenuIcon = ({ toggleMobileMenu, activeSandwich }: IMobileMenuProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector(state => state.theme.theme);
   return (
     <div
       onClick={toggleMobileMenu}

@@ -1,4 +1,4 @@
-import { useState, useContext, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 
 import { useFormik } from "formik";
@@ -17,7 +17,6 @@ import carsOperations from "../../redux/cars/cars-operations";
 import { ICar } from "../../model/car/car";
 
 import { useTranslation } from "react-i18next";
-import ThemeContext from "../../context/context";
 import { filterData } from "../../filterData";
 
 import "../../styles/AddForm/AddForm.scss";
@@ -27,7 +26,7 @@ interface IAddFormProps {
 }
 
 const AddForm = ({ toggleBackdrop }: IAddFormProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const isLoading = useAppSelector((state) => state.cars.loading);

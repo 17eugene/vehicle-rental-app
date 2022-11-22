@@ -1,6 +1,5 @@
-import { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import ThemeContext from "../../context/context";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import { MdLogout } from "react-icons/md";
 
 interface IAccountMenuActionsProps {
@@ -14,7 +13,7 @@ const AccountMenuActions = ({
   orderDetailsToggle,
   email,
 }: IAccountMenuActionsProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const { t } = useTranslation();
   return (
     <div

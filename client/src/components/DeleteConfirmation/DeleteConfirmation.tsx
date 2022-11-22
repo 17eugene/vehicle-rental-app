@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { useAppSelector } from "../../redux/hooks/hooks";
 import { useTranslation } from "react-i18next";
 import Backdrop from "../Backdrop/Backdrop";
@@ -6,7 +5,6 @@ import Modal from "../Modal/Modal";
 import Button from "../Button/Button";
 import Loader from "../Loader/Loader";
 
-import ThemeContext from "../../context/context";
 import "../../styles/DeleteConfirmation/DeleteConfirmation.scss";
 
 interface IDeleteConfirmationProps {
@@ -20,7 +18,7 @@ const DeleteConfirmation = ({
   toggleDeleteConfirmation,
   deleteError,
 }: IDeleteConfirmationProps) => {
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
   const isLoading = useAppSelector((state) => state.cars.loading);
   const { t } = useTranslation();
   return (

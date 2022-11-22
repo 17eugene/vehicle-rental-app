@@ -1,7 +1,7 @@
-import { useContext, useRef } from "react";
+import { useRef } from "react";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import PhoneNumber from "../PhoneNumber/PhoneNumber";
-import ThemeContext from "../../context/context";
 import UseOnClickOutside from "../../hooks/UseOnClickOutside/UseOnClickOutside";
 import "../../styles/Contacts/Contacts.scss";
 
@@ -11,9 +11,9 @@ interface IContactsProps {
 
 const Contacts = ({ toggleContactsSection }: IContactsProps) => {
   const contactsRef = useRef<HTMLDivElement>(null);
-  const theme = useContext(ThemeContext);
+  const theme = useAppSelector((state) => state.theme.theme);
 
-  UseOnClickOutside(contactsRef, toggleContactsSection )
+  UseOnClickOutside(contactsRef, toggleContactsSection);
   return (
     <div
       ref={contactsRef}
